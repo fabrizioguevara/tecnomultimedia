@@ -16,7 +16,7 @@ class Libro {
     this.pagAct = -1;
   }
   
-  boolean PasarPagina(int act) {
+  boolean pasarPagina(int act) {
     if(act < this.paginas.length){
       return true;
     }
@@ -25,7 +25,7 @@ class Libro {
     }
   }
 
-  boolean VolverPagina(int act) {
+  boolean volverPagina(int act) {
     if(act > 0){
       return true;
     }
@@ -34,12 +34,12 @@ class Libro {
     }
   }
   
-  void CargarTapa() {
+  void cargarTapa() {
     this.tapa.contenido = loadImage("tapa.jpeg");
     this.tapa.contenido.resize(400,640);
   }
   
-  void CargarPaginas() {
+  void cargarPaginas() {
     PImage img;
     for (int i = 0; i < this.paginas.length; i++){
       img = loadImage("pagina"+i+".jpeg");
@@ -52,7 +52,7 @@ class Libro {
     imageMode(CENTER);
     textAlign(CENTER);
     textSize(20);
-    libro.CargarTapa();
-    libro.CargarPaginas();
+    libro.cargarTapa();
+    libro.cargarPaginas();
   }
 }
