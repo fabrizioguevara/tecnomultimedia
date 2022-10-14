@@ -22,7 +22,7 @@ void draw() {
 
 void keyPressed() {
   if (keyCode == RIGHT) {
-    if (libro.PasarPagina(libro.pagAct)) {
+    if (libro.pasarPagina(libro.pagAct)) {
       libro.pagAct ++;
     }
     if (libro.pagAct == libro.paginas.length) {
@@ -31,7 +31,7 @@ void keyPressed() {
   }
   else {
     if (keyCode == LEFT) {
-      if (libro.VolverPagina(libro.pagAct)) {
+      if (libro.volverPagina(libro.pagAct)) {
         libro.pagAct --;
       }
       else {
