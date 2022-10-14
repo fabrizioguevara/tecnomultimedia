@@ -3,6 +3,7 @@ class Libro {
   Tapa tapa;
   int cant;
   Pagina[] paginas;
+  int pagAct;
 
   Libro () {
   }
@@ -11,7 +12,8 @@ class Libro {
     this.nombre = nombreLibro;
     this.cant = cantPaginas;
     this.tapa = new Tapa();  
-    this.paginas = new Pagina[cantPaginas];    
+    this.paginas = new Pagina[cantPaginas];
+    this.pagAct = -1;
   }
   
   boolean PasarPagina(int act) {
@@ -34,6 +36,7 @@ class Libro {
   
   void CargarTapa() {
     this.tapa.contenido = loadImage("tapa.jpeg");
+    this.tapa.contenido.resize(400,640);
   }
   
   void CargarPaginas() {
@@ -41,6 +44,15 @@ class Libro {
     for (int i = 0; i < this.paginas.length; i++){
       img = loadImage("pagina"+i+".jpeg");
       this.paginas[i] = new Pagina(img, i);
+      this.paginas[i].contenido.resize(400, 640);
     }
+  }
+  
+  void inicializarLibro() {
+    imageMode(CENTER);
+    textAlign(CENTER);
+    textSize(20);
+    libro.CargarTapa();
+    libro.CargarPaginas();
   }
 }
