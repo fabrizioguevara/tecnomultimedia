@@ -33,12 +33,16 @@ class Libro {
       return false;
     }
   }
-  
+    
   void cargarTapa() {
     this.tapa.contenido = loadImage("tapa.jpeg");
     this.tapa.contenido.resize(400,640);
   }
   
+  void dibujarTapa() {
+    image(this.tapa.contenido, width/2, height/2);
+  }
+ 
   void cargarPaginas() {
     PImage img;
     for (int i = 0; i < this.paginas.length; i++){
@@ -46,6 +50,10 @@ class Libro {
       this.paginas[i] = new Pagina(img, i);
       this.paginas[i].contenido.resize(400, 640);
     }
+  }
+  
+  void dibujarPagina() {
+    image (this.paginas[this.pagAct].contenido, width/2, height/2);
   }
   
   void inicializarLibro() {
