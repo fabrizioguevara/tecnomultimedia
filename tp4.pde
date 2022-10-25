@@ -10,13 +10,10 @@ void setup() {
 
 void draw() {
   if (libro.pagAct == -1) {
-    image(libro.tapa.contenido, width/2, height/2);
-    fill(0);
-    text("Utilice las flechas del teclado para", width/2, 500);
-    text("navegar a través del comic", width/2, 530);
+    libro.dibujarTapa();
   }
   else if (libro.pagAct != -1) {
-    image(libro.paginas[libro.pagAct].contenido, width/2, height/2);
+    libro.dibujarPagina();
   }
 }
 
